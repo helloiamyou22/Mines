@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FS Predictor — Warning</title>
+<style>
+body{
+  font-family: monospace;
+  background: #020617;
+  color:#00ff9f;
+  text-align:center;
+  padding:15px;
+}
+
+/* WARNING BOX */
+.warning-box{
+  max-width:900px;
+  margin:50px auto;
+  padding:16px 20px;
+  background:#111;
+  border-left:6px solid #22c55e;
+  border-radius:12px;
+  font-size:15px;
+  line-height:1.6;
+  box-shadow:0 8px 20px rgba(0,255,159,0.2);
+}
+
+/* BUTTON */
+.open-bot-btn{
+  display:block;
+  margin:35px auto;
+  padding:15px 30px;
+  font-size:17px;
+  font-weight:bold;
+  color:#000;
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+  border:none;
+  border-radius:14px;
+  cursor:pointer;
+  box-shadow:0 10px 22px rgba(34,197,94,0.35);
+  transition:all 0.25s ease;
+}
+
+.open-bot-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 28px rgba(34,197,94,0.45);
+}
+
+/* PAYMENT BOX */
+.payment-box{
+  max-width:500px;
+  margin:30px auto;
+  padding:20px;
+  background:#111;
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,255,159,0.15);
+  line-height:1.8;
+}
+
+.payment-box h2{
+  margin-bottom:15px;
+  color:#22c55e;
+}
+
+.copy-btn{
+  margin-top:10px;
+  padding:10px 20px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:bold;
+  background:#22c55e;
+  color:#000;
+}
+</style>
+</head>
+<body>
+
+<div class="warning-box">
+⚠️ <strong>Risk Disclaimer:</strong> FS Predictor provides probability-based signals. 
+Results may vary. Always trade responsibly.
+</div>
+
+<!-- PAYMENT SECTION -->
+<div class="payment-box">
+  <h2>💳 MTN MoMo Payment</h2>
+  
+  <p><strong>Receiver Name:</strong> Patricia Asiedu</p>
+  <p><strong>MoMo Number:</strong> 0534494604</p>
+  <p><strong>Network:</strong> MTN</p>
+
+  <p>Send payment proof via WhatsApp.</p>
+
+  <button class="copy-btn" onclick="copyNumber()">📋 Copy Number</button>
+</div>
+
+<button class="open-bot-btn" onclick="checkPayment()">🚀 Open Real Bot</button>
+
+<script>
+function copyNumber(){
+  navigator.clipboard.writeText("0534494604");
+  alert("MoMo number copied!");
+}
+
+function checkPayment(){
+  let paid = confirm(
+    "Have you completed the MTN MoMo payment to Patricia Asiedu (0534494604)?"
+  );
+
+  if(paid){
+    location.href='bot.html';
+  }else{
+    alert("Please complete payment before accessing the bot. And sed payment proof with an imgae on the same number via WhatsApp");
+  }
+}
+</script>
+
+</body>
+</html>
